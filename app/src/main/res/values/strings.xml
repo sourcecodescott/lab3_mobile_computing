@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lab3</string>
+    <string name="hello_blank_fragment">You are half way through :)</string>
+    <string name="click_to_continue_journey">Click to continue Journey</string>
+    <string name="yay_you_did_it">Yay! You Did It.</string>
+    <string name="nameTxtInList">TextView</string>
+    <string name="profileimg">profileImg</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+</resources>
