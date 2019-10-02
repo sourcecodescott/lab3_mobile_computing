@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<navigation
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/graph_navigation"
+app:startDestination="@id/detailFragment">
+
+<fragment
+    android:id="@+id/detailFragment"
+    android:name="ca.dal.cs4176.lab3.DetailFragment"
+    android:label="DetailFragment" >
+    <action
+        android:id="@+id/action_detailFragment_to_detailFragmentSecond"
+        app:destination="@id/detailFragmentSecond" />
+</fragment>
+<fragment
+    android:id="@+id/detailFragmentSecond"
+    android:name="ca.dal.cs4176.lab3.DetailFragmentSecond"
+    android:label="fragment_detail_fragment_second"
+    tools:layout="@layout/fragment_detail_fragment_second" >
+    <action
+        android:id="@+id/action_detailFragmentSecond_to_detailFragmentThird"
+        app:destination="@id/detailFragmentThird" />
+</fragment>
+<fragment
+    android:id="@+id/detailFragmentThird"
+    android:name="ca.dal.cs4176.lab3.DetailFragmentThird"
+    android:label="fragment_detail_fragment_third"
+    tools:layout="@layout/fragment_detail_fragment_third" />
+
+
+</navigation>

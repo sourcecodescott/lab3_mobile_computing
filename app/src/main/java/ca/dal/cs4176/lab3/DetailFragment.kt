@@ -24,9 +24,12 @@ class DetailFragment : Fragment() {
         activity?.intent?.let(this::populateFromIntent)
         // new navigation style example:
         startBtn.setOnClickListener {
-            /*Add your clickListener here*/
+            findNavController().navigate(R.id.action_detailFragment_to_detailFragmentSecond)
         }
     }
+
+
+
 
     private fun populateFromIntent(intent: Intent) {
         nameTxt.text = intent.getStringExtra(USER_DETAILS_FIRST_NAME_KEY)

@@ -21,7 +21,7 @@ class DetailFragmentSecond : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         secondBtn.setOnClickListener {
-            /*Add your clickListener here*/
+            findNavController().navigate(R.id.action_detailFragmentSecond_to_detailFragmentThird)
         }
     }
 

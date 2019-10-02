@@ -25,10 +25,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     //get users list using Volley
+
     private fun getUsers() {
         Volley.newRequestQueue(this).add(
             StringRequest(Request.Method.GET, GET_USERS_URL, Response.Listener<String> { response ->
-                val users: List<User>// TODO: Parse JSON data
+                val users: ArrayList<User> = ArrayList()//
+                val JsonObj = JSONObject(response.toString())
+                val myUsers = JsonObj.getJSONArray("data")
+
+                for (i in 0 until myUsers.length()) {
+                    val u = User(
+                        myUsers.getJSONObject(i).getString("id"),
+                        myUsers.getJSONObject(i).getString("first_name"),
+                        myUsers.getJSONObject(i).getString("last_name"),
+                        myUsers.getJSONObject(i).getString("avatar"),
+                        myUsers.getJSONObject(i).getString("email"))
+                    users.add(u)
+                }
 
                 //set the adapter after getting the data
                 usersRecycler.adapter = UserListAdapter(this@MainActivity, users)
@@ -37,5 +50,7 @@ class MainActivity : AppCompatActivity() {
             })
         )
     }
+
+
 
 }
